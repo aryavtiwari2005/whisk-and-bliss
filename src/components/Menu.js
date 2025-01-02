@@ -121,7 +121,7 @@ export default function Menu() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="flex justify-center space-x-6 mb-16"
+        className="flex flex-wrap justify-center gap-4 mb-16" // Changed to flex-wrap and gap
       >
         {menuItems.map(({category, icon}) => (
           <motion.button
@@ -130,11 +130,12 @@ export default function Menu() {
             whileTap={{ scale: 0.95 }}
             onClick={() => setSelectedCategory(category)}
             className={`
-              flex items-center space-x-2 px-6 py-3 rounded-full transition-all duration-300 
+              flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 
               ${selectedCategory === category
                 ? 'bg-primary text-white shadow-lg'
                 : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
               } ${nunito.className}
+              max-w-[150px] // Set a max width for buttons
             `}
           >
             <FontAwesomeIcon icon={icon} />

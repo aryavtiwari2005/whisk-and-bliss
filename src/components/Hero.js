@@ -128,6 +128,7 @@ export default function Hero() {
             <motion.div 
               key={index}
               variants={cardVariants}
+              href="#menu"
               className="bg-white/15 backdrop-blur-xl p-6 rounded-2xl shadow-2xl text-center 
               transform transition-all hover:scale-105 hover:shadow-2xl group"
             >

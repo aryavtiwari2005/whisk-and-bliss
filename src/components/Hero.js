@@ -11,6 +11,7 @@ import {
   faCoffee
 } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { Playfair_Display, Lora, Nunito } from 'next/font/google';
 
 // Configure fonts
@@ -125,21 +126,22 @@ export default function Hero() {
           className="grid grid-cols-2 md:grid-cols-4 gap-6"
         >
           {productCards.map((product, index) => (
-            <motion.div 
-              key={index}
-              variants={cardVariants}
-              href="#menu"
-              className="bg-white/15 backdrop-blur-xl p-6 rounded-2xl shadow-2xl text-center 
-              transform transition-all hover:scale-105 hover:shadow-2xl group"
-            >
-              <FontAwesomeIcon 
-                icon={product.icon} 
-                className="text-5xl text-white mb-4 group-hover:text-primary transition-colors" 
-              />
-              <h3 className={`${nunito.className} font-semibold text-white text-lg tracking-wide`}>
-                {product.title}
-              </h3>
-            </motion.div>
+            <Link href="#menu">
+              <motion.div 
+                key={index}
+                variants={cardVariants}
+                className="bg-white/15 backdrop-blur-xl p-6 rounded-2xl shadow-2xl text-center 
+                transform transition-all hover:scale-105 hover:shadow-2xl group"
+              >
+                <FontAwesomeIcon 
+                  icon={product.icon} 
+                  className="text-5xl text-white mb-4 group-hover:text-primary transition-colors" 
+                />
+                <h3 className={`${nunito.className} font-semibold text-white text-lg tracking-wide`}>
+                  {product.title}
+                </h3>
+              </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>

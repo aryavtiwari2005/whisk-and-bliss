@@ -63,7 +63,7 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className="relative min-h-screen flex items-center justify-center py-10">
       {/* Background Layer */}
       <div 
         className="absolute inset-0 bg-black/70 backdrop-blur-lg"
